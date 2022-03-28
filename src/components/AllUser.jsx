@@ -18,14 +18,14 @@ const rows = Candidates.map(
     lastName,
     profilePicture,
     email,
-    experience: { ...tech_years },
+    // experience: { ...tech_years },
   }) => ({
     id: id,
     lastName: firstName,
     firstName: lastName,
     image: profilePicture,
     email: email,
-    job: tech_years,
+    // job: tech_years,
   })
 );
 
@@ -46,13 +46,13 @@ function AllUser() {
     {
       field: 'firstName',
       headerName: 'First name',
-      width: 130,
+      width: 150,
       description: 'User FirstName',
     },
     {
       field: 'lastName',
-      headerName: 'Last name',
-      width: 130,
+      headerName: 'Last Name',
+      width: 150,
       description: 'User LastName',
     },
     {
@@ -60,7 +60,7 @@ function AllUser() {
       headerName: 'Full name',
       description: 'User FullName',
       sortable: false,
-      width: 160,
+      width: 140,
       valueGetter: (params) => `${params.row.firstName} ${params.row.lastName}`,
     },
     {
@@ -68,7 +68,7 @@ function AllUser() {
       headerName: 'User Image',
       description: 'User Image',
       sortable: false,
-      width: 120,
+      width: 100,
       renderCell: (params) => (
         <img src={params.row.image} alt='user-photo' className='img' />
       ),
@@ -86,12 +86,12 @@ function AllUser() {
       headerName: 'Language & Experience',
       description: 'Language & Experience',
       sortable: false,
-      width: 260,
+      width: 200,
       valueGetter: (params) => params.row.job,
     },
     {
       field: 'delete',
-      width: 75,
+      width: 60,
       sortable: false,
       disableColumnMenu: true,
       renderHeader: () => {
@@ -111,7 +111,7 @@ function AllUser() {
     },
     {
       field: 'accept',
-      width: 75,
+      width: 60,
       sortable: false,
       disableColumnMenu: true,
       renderHeader: () => {
