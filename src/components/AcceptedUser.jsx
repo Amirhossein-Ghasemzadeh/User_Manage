@@ -2,7 +2,7 @@ import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Box } from '@mui/system';
 
-function RejectedUser({ rejectedUser, columns }) {
+function AcceptedUser() {
   return (
     <Box
       pt={8}
@@ -13,16 +13,16 @@ function RejectedUser({ rejectedUser, columns }) {
         width: '1300px',
       }}
     >
-      <h1>Rejected Users</h1>
-      <DataGrid
-        rows={rejectedUser}
-        columns={columns}
-        pageSize={50}
-        rowsPerPageOptions={[50]}
+      <h1>Accepted Users</h1>
+      {/* <DataGrid
+        rows={2}
+        columns={2}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
         checkboxSelection
-      />
+      /> */}
     </Box>
   );
 }
 
-export default RejectedUser;
+export default AcceptedUser;
