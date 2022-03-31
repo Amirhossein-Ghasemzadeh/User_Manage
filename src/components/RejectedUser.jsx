@@ -1,25 +1,18 @@
 import React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 import { Box } from '@mui/system';
+import Table from './Table';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import { useCandidatesState } from '../context/CandidatesState';
 
-function RejectedUser({ rejectedUser, columns }) {
+function RejectedUser() {
+  const { rejected } = useCandidatesState();
+
   return (
-    <Box
-      pt={8}
-      sx={{
-        height: '390px',
-        width: '850px',
-        textAlign: 'center',
-        width: '1300px',
-      }}
-    >
-      <h1>Rejected Users</h1>
-      <DataGrid
-        rows={rejectedUser}
-        columns={columns}
-        pageSize={50}
-        rowsPerPageOptions={[50]}
-        checkboxSelection
+    <Box>
+      <Table
+        rows={rejected}
+        name={'Rejected Candidates'}
+        deletIcon={<DeleteOutlinedIcon style={{ fill: 'red' }} />}
       />
     </Box>
   );

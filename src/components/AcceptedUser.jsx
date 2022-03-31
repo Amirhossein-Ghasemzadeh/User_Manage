@@ -1,26 +1,19 @@
 import React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 import { Box } from '@mui/system';
+import Table from './Table';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import { useCandidatesState } from '../context/CandidatesState';
 
 function AcceptedUser() {
+  const { accepted } = useCandidatesState();
+
   return (
-    <Box
-      pt={8}
-      sx={{
-        height: '390px',
-        width: '850px',
-        textAlign: 'center',
-        width: '1300px',
-      }}
-    >
-      <h1>Accepted Users</h1>
-      {/* <DataGrid
-        rows={2}
-        columns={2}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      /> */}
+    <Box>
+      <Table
+        rows={accepted}
+        name={'Accepted Candidates'}
+        deletIcon={<DeleteOutlinedIcon style={{ fill: 'red' }} />}
+      />
     </Box>
   );
 }
