@@ -45,7 +45,7 @@ const Table = ({ rows, name, deletIcon, acceptIcon }) => {
       headerName: 'Language & Experience',
       description: 'Language & Experience',
       sortable: false,
-      width: 450,
+      width: 480,
     },
     {
       field: 'delete',
@@ -98,7 +98,7 @@ const Table = ({ rows, name, deletIcon, acceptIcon }) => {
       sx={{
         height: '390px',
         textAlign: 'center',
-        width: '1050px',
+        width: '1328px',
       }}
     >
       <Typography variant='h4' mb={2} mt={4}>
