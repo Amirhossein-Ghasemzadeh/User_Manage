@@ -1,22 +1,16 @@
-import React from 'react';
 import { Box } from '@mui/system';
 import Table from './Table';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
-import { useCandidatesState } from '../context/CandidatesState';
 
-function AllUsers() {
-  const { candidates } = useCandidatesState();
-
+function AllUsers({ rows }) {
   return (
     <Box>
       <Table
-        rows={candidates}
+        rows={rows}
         name={'All Candidates'}
+        acceptIcon={<CheckCircleOutlineOutlinedIcon style={{ fill: 'green' }} />}
         deletIcon={<DeleteOutlinedIcon style={{ fill: 'red' }} />}
-        acceptIcon={
-          <CheckCircleOutlineOutlinedIcon style={{ fill: 'green' }} />
-        }
       />
     </Box>
   );
